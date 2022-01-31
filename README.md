@@ -15,6 +15,8 @@ My application needs to save my planned event per each hour to local storage and
 * The URL of the deployed application
 
 * The URL of the GitHub repository, with a unique name and a README describing the project
+ https://maryiavinogradova.github.io/week5/
+ https://github.com/MaryiaVinogradova/week5.git
 
 
 
