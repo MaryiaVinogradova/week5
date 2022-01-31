@@ -3,9 +3,8 @@ var day = moment().format("MMM Do YY");
 $("#currentDay").append(day);
 
 $(document).ready(function () {
-  // saveBtn click listener 
+  // saveBtn click listener function
   $(".saveBtn").on("click", function () {
-      // Get nearby values of the description in JQuery
       var text = $(this).siblings(".event").val();
       var time = $(this).parent().attr("id");
 
@@ -14,14 +13,13 @@ $(document).ready(function () {
   })
  
   function timeTracker() {
-      //get current number of hours.
+      //compare present hour to scheduled hours
       var presentTime = moment().hour();
 
       // loop over time blocks
       $(".time-block").each(function () {
           var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
-          // To check the time and add the classes for background indicators
           if (blockTime < presentTime) {
               $(this).removeClass("future");
               $(this).removeClass("present");
@@ -41,7 +39,7 @@ $(document).ready(function () {
       })
   }
 
-  // Get item from local storage if any
+  // Get item from local storage to show up your events per hour
   $("#hour-7 .event").val(localStorage.getItem("hour-7"));
   $("#hour-8 .event").val(localStorage.getItem("hour-8"));
   $("#hour-9 .event").val(localStorage.getItem("hour-9"));
