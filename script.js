@@ -3,20 +3,17 @@ var day = moment().format("MMM Do YY");
 $("#currentDay").append(day);
 
 $(document).ready(function () {
-  // saveBtn click listener function
+
   $(".saveBtn").on("click", function () {
       var text = $(this).siblings(".event").val();
       var time = $(this).parent().attr("id");
 
-      // Save text in local storage
       localStorage.setItem(time, text);
   })
  
   function timeTracker() {
-      //compare present hour to scheduled hours
       var presentTime = moment().hour();
 
-      // loop over time blocks
       $(".time-block").each(function () {
           var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
