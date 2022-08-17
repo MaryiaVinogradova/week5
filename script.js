@@ -1,6 +1,5 @@
-
-var day = moment().format("MMM Do YY");
-$("#currentDay").append(day);
+// var day = moment().format("MMM Do YY");
+// $("#currentDay").append(day);
 
 $(document).ready(function () {
 
@@ -14,26 +13,52 @@ $(document).ready(function () {
   function timeTracker() {
       var presentTime = moment().hour();
 
-      $(".time-block").each(function () {
-          var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+      var day = moment().format("MMM Do YY");
+      $("#currentDay").append(day);
 
-          if (blockTime < presentTime) {
-              $(this).removeClass("future");
-              $(this).removeClass("present");
-              $(this).addClass("past");
-          }
-          else if (blockTime === presentTime) {
-              $(this).removeClass("past");
-              $(this).removeClass("future");
-              $(this).addClass("present");
-          }
-          else {
-              $(this).removeClass("present");
-              $(this).removeClass("past");
-              $(this).addClass("future");
+      $(".time-block-7") = (function () {
+          var hr7 = $('#hour-7');
+          var hr8 = $('#hour-8');
+          var hr9 = $('#hour-9');
+          var hr10 = $('#hour-10');
 
+          var dayTime = ["7", "8", "9", "10"]
+
+          function updateColor(){
+            for(var i=0; i<dayTime.length; i++){
+                if(parseInt(dayTime[i])>day){
+                    $("#"+dayTime[i]).addClass("future")
+                }
+                else if(parseInt(dayTime[i])<day){
+                    $("#"+dayTime[i].addClass("past"))
+                }
+                else if(parseInt(dayTime[i])==day){
+                    $("#"+day[i]).addClass("present")
+                }
+            }
+            
           }
-      })
+          updateColor();
+    //       var hr7 = parseInt($('.time-block-7').attr("id").split("hour")[1]);
+
+    //       if (hr7 < presentTime) {
+    //           $(this).removeClass("future");
+    //           $(this).removeClass("present");
+    //           $(this).addClass("past");
+    //       }
+    //       else if (hr7 === presentTime) {
+    //           $(this).removeClass("past");
+    //           $(this).removeClass("future");
+    //           $(this).addClass("present");
+    //       }
+    //       else {
+    //           $(this).removeClass("present");
+    //           $(this).removeClass("past");
+    //           $(this).addClass("future");
+
+    //       }
+    //   });
+      
   }
 
   // Get item from local storage to show up your events per hour
