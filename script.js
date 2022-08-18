@@ -28,10 +28,73 @@ $(document).ready(function(){
       $("#hr16 .event").val(localStorage.getItem("hr16"));
       $("#hr17 .event").val(localStorage.getItem("hr17"));
       $("#hr18 .event").val(localStorage.getItem("hr18"));
+
+    //clear btn set up
+      var clear7 = $("#clear7");
+      var clear8 = $("#clear8");
+      var clear9 = $("#clear9");
+      var clear10 = $("#clear10");
+      var clear11 = $("#clear11");
+      var clear12 = $("#clear12");
+      var clear13 = $("#clear13");
+      var clear14 = $("#clear14");
+      var clear15 = $("#clear15");
+      var clear16 = $("#clear16");
+      var clear17 = $("#clear17");
+      var clear18 = $("#clear18");
+
+      clear7.on("click",function(){
+        localStorage.removeItem("hr7");
+        location.reload();
+      });
+      clear8.on("click",function(){
+        localStorage.removeItem("hr8");
+        location.reload();
+      });
+      clear9.on("click",function(){
+        localStorage.removeItem("hr9");
+        location.reload();
+      });
+      clear10.on("click",function(){
+        localStorage.removeItem("hr10");
+        location.reload();
+      });
+      clear11.on("click",function(){
+        localStorage.removeItem("hr11");
+        location.reload();
+      });
+      clear12.on("click",function(){
+        localStorage.removeItem("hr12");
+        location.reload();
+      });
+      clear13.on("click",function(){
+        localStorage.removeItem("hr13");
+        location.reload();
+      });
+      clear14.on("click",function(){
+        localStorage.removeItem("hr14");
+        location.reload();
+      });
+      clear15.on("click",function(){
+        localStorage.removeItem("hr15");
+        location.reload();
+      });
+      clear16.on("click",function(){
+        localStorage.removeItem("hr16");
+        location.reload();
+      });
+      clear17.on("click",function(){
+        localStorage.removeItem("hr17");
+        location.reload();
+      });
+      clear18.on("click",function(){
+        localStorage.removeItem("hr18");
+        location.reload();
+      });
     
 
     // setting hour colors
-    var dayTime = ["23", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    var dayTime = ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
     updateschedule();
     
     function updateschedule() {
